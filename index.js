@@ -34,7 +34,8 @@ module.exports = {
 
   treeForAddon(tree) {
     let app = this._findHost();
-    if (!app.tests) {
+
+    if (app.isProduction) {
       tree = new Funnel(tree, {
         exclude: ['helpers/assert.js'],
       });
