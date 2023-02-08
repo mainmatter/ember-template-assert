@@ -32,7 +32,7 @@ module.exports = {
     };
   },
 
-  treeForAddon(tree) {
+  _filterAssertHelper(tree) {
     let app = this._findHost();
 
     if (app.isProduction) {
@@ -41,6 +41,22 @@ module.exports = {
       });
     }
 
-    return this._super.treeForAddon.call(this, tree);
+    /*
+    let log = require('broccoli-stew').log;
+    return log(tree, {
+      output: 'tree',
+      label: `ember-template-assert ${tree.name} tree`,
+    });
+    */
+
+    return tree;
+  },
+
+  treeForApp(tree) {
+    return this._super.treeForApp.call(this, this._filterAssertHelper(tree, 'app tree'));
+  },
+
+  treeForAddon(tree) {
+    return this._super.treeForAddon.call(this, this._filterAssertHelper(tree, 'addon tree'));
   },
 };
