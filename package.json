@@ -1,7 +1,7 @@
 {
   "name": "ember-template-assert",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Small addon that makes Ember's assert utility available as a template helper.",
   "keywords": [
     "ember-addon",
     "debug"
