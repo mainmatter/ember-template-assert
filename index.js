@@ -53,10 +53,16 @@ module.exports = {
   },
 
   treeForApp(tree) {
-    return this._super.treeForApp.call(this, this._filterAssertHelper(tree, 'app tree'));
+    return this._super.treeForApp.call(
+      this,
+      this._filterAssertHelper(tree, 'app tree')
+    );
   },
 
   treeForAddon(tree) {
-    return this._super.treeForAddon.call(this, this._filterAssertHelper(tree, 'addon tree'));
+    return this._super.treeForAddon.call(
+      this,
+      this._filterAssertHelper(tree, 'addon tree')
+    );
   },
 };
