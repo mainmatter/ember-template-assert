@@ -1,6 +1,6 @@
 {
   "name": "ember-template-assert",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Small addon that makes Ember's assert utility available as a template helper.",
   "keywords": [
     "ember-addon",
