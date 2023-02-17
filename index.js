@@ -5,12 +5,6 @@ const Funnel = require('broccoli-funnel');
 module.exports = {
   name: require('./package').name,
 
-  options: {
-    babel: {
-      plugins: [require.resolve('ember-auto-import/babel-plugin')],
-    },
-  },
-
   setupPreprocessorRegistry(type, registry) {
     let app = this._findHost();
     let isProduction = app?.isProduction;
