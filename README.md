@@ -1,6 +1,6 @@
 # ember-template-assert
 
-[Short description of the addon.]
+Small addon that makes Ember's assert utility available as a template helper. Completely removed from production builds.
 
 
 ## Compatibility
@@ -19,7 +19,12 @@ ember install ember-template-assert
 
 ## Usage
 
-[Longer description of how to use the addon in apps.]
+Usage is identical to the `assert` utility provided by Ember. See: https://api.emberjs.com/ember/release/functions/@ember%2Fdebug/assert for comprehensive documentation.
+
+```
+// template.hbs
+{{assert "myVariable needs to be truthy" this.myVariable}}
+```
 
 
 ## Contributing
