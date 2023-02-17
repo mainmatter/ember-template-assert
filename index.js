@@ -12,13 +12,18 @@ module.exports = {
   },
 
   setupPreprocessorRegistry(type, registry) {
-    const plugin = this._buildPlugin();
-    plugin.parallelBabel = {
-      requireFile: __filename,
-      buildUsing: '_buildPlugin',
-      params: {},
-    };
-    registry.add('htmlbars-ast-plugin', plugin);
+    let app = this._findHost();
+    let isProduction = app?.isProduction;
+
+    if (isProduction) {
+      const plugin = this._buildPlugin();
+      plugin.parallelBabel = {
+        requireFile: __filename,
+        buildUsing: '_buildPlugin',
+        params: {},
+      };
+      registry.add('htmlbars-ast-plugin', plugin);
+    }
   },
 
   _buildPlugin() {
